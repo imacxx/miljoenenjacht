@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Miljoenenjacht' }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,10 +59,78 @@
             pointer-events: none;
         }
 
-        .reset-button {
-            /* ... existing reset button styles ... */
+        /* Progress Bar Styles */
+        .progress-bar-container {
+            position: absolute;
+            left: 250px; /* Adjust based on the width of the left column */
+            right: 170px; /* Adjust based on the width of the right column */
+            top: 0;
+            text-align: center;
+            padding-top: 20px;
         }
 
+        .progress-bar {
+            position: relative;
+            background-color: #e0e0e0;
+            height: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background-color: #3498db;
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .threshold-marker {
+            position: absolute;
+            top: -15px;
+            transform: translateX(-50%);
+        }
+
+        .star-icon {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+
+        .progress-buttons {
+            margin-top: 20px;
+        }
+
+        .progress-buttons button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: white;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .progress-buttons button:hover {
+            background-color: #2980b9;
+        }
+
+        .reset-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .reset-button:hover {
+            background-color: #c0392b;
+        }
 
     </style>
 </head>
